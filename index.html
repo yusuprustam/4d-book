@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b2b">
+  <meta name="description" content="4D BOOK — білімді әрекетке айналдыратын цифрлық кітап. 5-сыныпқа арналған интерактивті оқу материалдары.">
+  <title>4D BOOK | Білімді әрекетке айналдыратын цифрлық кітап</title>
+  <style>
+    :root {
+      --green:#123b2b; --green2:#1d503b; --green3:#2c684d;
+      --gold:#c6a45a; --gold-light:#ead9aa; --cream:#f7f5ee;
+      --ink:#1d2b24; --muted:#66736b; --white:#fff;
+      --line:#e6e1d3; --shadow:0 18px 45px rgba(18,59,43,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+    a{color:inherit;text-decoration:none}
+    .topline{height:5px;background:linear-gradient(90deg,var(--green),var(--gold),var(--green))}
+    header{background:var(--green);color:var(--white);position:relative;overflow:hidden}
+    header:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(234,217,170,.18);border-radius:50%;right:-130px;top:-220px;box-shadow:0 0 0 35px rgba(234,217,170,.035),0 0 0 70px rgba(234,217,170,.025)}
+    .nav{max-width:1160px;margin:auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;z-index:1}
+    .brand{display:flex;align-items:center;gap:13px}
+    .brandmark{width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light);font-size:21px}
+    .brandname{font-size:22px;letter-spacing:3px;font-weight:bold}
+    .navlinks{display:flex;gap:26px;font-family:Arial,sans-serif;font-size:13px;color:#e5ebdf}
+    .navlinks a:hover{color:var(--gold-light)}
+    .hero{max-width:1160px;margin:auto;padding:62px 24px 82px;position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .eyebrow{font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:3px;color:var(--gold-light);font-size:11px;font-weight:bold}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.04;margin:18px 0 20px;font-weight:normal;max-width:700px}
+    h1 span{color:var(--gold-light);font-style:italic}
+    .hero p{font-family:Arial,sans-serif;color:#dce5dc;font-size:16px;line-height:1.8;max-width:590px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:3px;font:600 13px Arial,sans-serif;letter-spacing:.3px;transition:.2s}
+    .btn-gold{background:var(--gold);color:#172c20}
+    .btn-gold:hover{background:#d7bb7d;transform:translateY(-2px)}
+    .btn-outline{border:1px solid rgba(234,217,170,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.08)}
+    .book-art{min-height:310px;display:grid;place-items:center;position:relative}
+    .book{width:230px;height:292px;background:linear-gradient(110deg,#0b2c20,#1e563d);border:2px solid var(--gold);border-radius:5px 12px 12px 5px;box-shadow:18px 18px 0 rgba(0,0,0,.16),inset 9px 0 12px rgba(0,0,0,.25);transform:rotate(5deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;position:relative}
+    .book:before{content:"";position:absolute;left:13px;top:0;bottom:0;width:2px;background:rgba(234,217,170,.4)}
+    .book-seal{width:66px;height:66px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light);font-size:28px;margin-bottom:22px}
+    .book strong{font-size:28px;letter-spacing:4px;color:#fff}
+    .book small{font:10px Arial,sans-serif;letter-spacing:1.6px;color:var(--gold-light);line-height:1.6;margin-top:13px;text-transform:uppercase}
+    .book-caption{position:absolute;bottom:3px;right:0;color:#d6dfd4;font:11px Arial,sans-serif;letter-spacing:1px}
+    .section{max-width:1160px;margin:auto;padding:72px 24px}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 38px}
+    .section-kicker{color:#92763b;text-transform:uppercase;letter-spacing:2.5px;font:700 10px Arial,sans-serif}
+    h2{font-size:clamp(30px,4vw,42px);font-weight:normal;color:var(--green);margin:12px 0}
+    .section-head p{font:14px/1.8 Arial,sans-serif;color:var(--muted);margin:0}
+    .quarters{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .quarter{background:#fff;border:1px solid var(--line);padding:26px 22px 24px;min-height:220px;position:relative;transition:.25s;box-shadow:0 5px 18px rgba(18,59,43,.035)}
+    .quarter:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+    .q-number{font-size:42px;color:#d9c797;line-height:1}
+    .quarter h3{font-size:21px;color:var(--green);font-weight:normal;margin:16px 0 9px}
+    .quarter p{font:12px/1.7 Arial,sans-serif;color:var(--muted);min-height:42px}
+    .quarter a{display:inline-block;margin-top:10px;color:#856b31;font:700 11px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:5px}
+    .features{background:#edf0e9;border-top:1px solid #e0e5dc;border-bottom:1px solid #e0e5dc}
+    .feature-grid{max-width:1160px;margin:auto;padding:55px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .feature{display:flex;gap:15px;align-items:flex-start}
+    .feature-icon{flex:0 0 42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:#92763b;font-size:18px}
+    .feature h3{margin:2px 0 8px;color:var(--green);font-size:18px;font-weight:normal}
+    .feature p{margin:0;color:var(--muted);font:12px/1.7 Arial,sans-serif}
+    .author{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px;align-items:center}
+    .author-seal{background:var(--green);color:var(--gold-light);min-height:210px;display:grid;place-items:center;text-align:center;padding:25px;border:5px double var(--gold)}
+    .author-seal span{font-size:48px}
+    .author-seal small{font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+    .author h2{text-align:left}
+    .author p{font:14px/1.9 Arial,sans-serif;color:var(--muted)}
+    .author-name{color:var(--green);font-size:20px;margin-top:18px}
+    footer{background:#0d2e21;color:#dce5dc;padding:28px 24px}
+    .footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center;font:11px Arial,sans-serif}
+    .footer-brand{color:var(--gold-light);font: bold 16px Georgia,serif;letter-spacing:2px}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center;padding-top:48px}.hero p{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.book-art{min-height:300px}.quarters{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:1fr;gap:24px}.author{grid-template-columns:1fr}.author-seal{min-height:160px}}
+    @media(max-width:560px){.nav{padding:17px 18px}.navlinks{gap:12px;font-size:11px}.brandname{font-size:18px}.brandmark{width:39px;height:39px}.hero{padding:43px 20px 60px}h1{font-size:43px}.book{width:195px;height:255px}.section{padding:55px 18px}.quarters{grid-template-columns:1fr}.quarter{min-height:190px}.footer-inner{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header id="home">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="4D BOOK басты бет">
+        <span class="brandmark">✦</span><span class="brandname">4D BOOK</span>
+      </a>
+      <div class="navlinks"><a href="#quarters">ТОҚСАНДАР</a><a href="#about">ЖОБА ТУРАЛЫ</a><a href="#author">АВТОР</a></div>
+    </nav>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Цифрлық білім беру кеңістігі</div>
+        <h1>Білімді <span>әрекетке</span> айналдыратын цифрлық кітап</h1>
+        <p>Оқуды зерттеуге, тапсырманы тәжірибеге, ал білімді нақты әрекетке айналдыратын интерактивті оқу кеңістігі.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#quarters">ОҚУДЫ БАСТАУ</a>
+          <a class="btn btn-outline" href="#about">ЖОБАМЕН ТАНЫСУ</a>
+        </div>
+      </div>
+      <div class="book-art" aria-label="4D BOOK цифрлық кітабының сәндік бейнесі">
+        <div class="book"><div class="book-seal">✦</div><strong>4D BOOK</strong><small>Білімді әрекетке<br>айналдыратын цифрлық кітап</small></div>
+        <div class="book-caption">БІЛІМ • ІЗДЕНІС • ӘРЕКЕТ</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="quarters">
+      <div class="section-head">
+        <div class="section-kicker">Оқу материалдары</div>
+        <h2>Білімге бастар төрт кезең</h2>
+        <p>5-сыныпқа арналған цифрлық оқу материалдарын қажетті тоқсан бойынша таңдаңыз.</p>
+      </div>
+      <div class="quarters">
+        <article class="quarter"><div class="q-number">01</div><h3>I тоқсан</h3><p>Бірінші тоқсанның интерактивті оқу материалы.</p><a href="1-toksan.html">Кітапты ашу&nbsp; →</a></article>
+        <article class="quarter"><div class="q-number">02</div><h3>II тоқсан</h3><p>Екінші тоқсанның интерактивті оқу материалы.</p><a href="2-toksan.html">Кітапты ашу&nbsp; →</a></article>
+        <article class="quarter"><div class="q-number">03</div><h3>III тоқсан</h3><p>Үшінші тоқсанның интерактивті оқу материалы.</p><a href="3-toksan.html">Кітапты ашу&nbsp; →</a></article>
+        <article class="quarter"><div class="q-number">04</div><h3>IV тоқсан</h3><p>Төртінші тоқсанның интерактивті оқу материалы.</p><a href="4-toksan.html">Кітапты ашу&nbsp; →</a></article>
+      </div>
+    </section>
+
+    <section class="features" id="about">
+      <div class="feature-grid">
+        <div class="feature"><div class="feature-icon">✧</div><div><h3>Интерактивті оқу</h3><p>Оқушы материалмен белсенді жұмыс істеп, білімін тапсырмалар арқылы бекітеді.</p></div></div>
+        <div class="feature"><div class="feature-icon">◇</div><div><h3>Бір кеңістікте</h3><p>Төрт тоқсанның материалдары бір сайтқа жинақталған.</p></div></div>
+        <div class="feature"><div class="feature-icon">◎</div><div><h3>Қолжетімді дизайн</h3><p>Компьютер мен смартфоннан пайдалануға ыңғайлы бейімделгіш бет.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="author">
+      <div class="author">
+        <div class="author-seal"><div><span>✦</span><br><small>Авторлық цифрлық жоба</small></div></div>
+        <div>
+          <div class="section-kicker">Жоба авторы</div>
+          <h2>Білімге жаңа көзқарас</h2>
+          <p>4D BOOK — оқу үдерісін мазмұнды, белсенді және қолжетімді етуге бағытталған авторлық цифрлық кітап жобасы.</p>
+          <div class="author-name">Избанова Анеля Аскерқызы</div>
+          <p><em>«4D BOOK — білімді әрекетке айналдыратын цифрлық кітап»</em></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><div class="footer-brand">4D BOOK</div><div>© 2026 4D BOOK. Авторлық білім беру жобасы.</div><div>Білім • Ізденіс • Әрекет</div></div></footer>
+</body>
+</html>
